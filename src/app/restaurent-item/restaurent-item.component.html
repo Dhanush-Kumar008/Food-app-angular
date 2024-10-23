@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="heading">
+      <H1>Zomato Item List</H1>
+    </div>
+
+    <div class="all-food" *ngFor="let item of foodCategory" >
+      <div class="overall-div">
+        <div class="img-div">
+          <img [src]="item.photoUrl" alt="" />
+          <p>{{item.restaurantName}}</p>
+        </div>
+        <div class="food-details">
+          <h3>{{item.menuItemName}}</h3>
+          <h3>₹
+            {{item.price}}</h3>
+          <button
+            style="
+              background-color: green;
+              color: white;
+              padding: 5px;
+              padding-left: 20px;
+              padding-right: 20px;
+              border: none;
+              border-radius: 6px;
+            "
+            (click)="quantityPopup(item)"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="popup-div">
+      <div class="first-div">
+        <h3>Modal Heading</h3>
+        <i class="fa-solid fa-xmark" (click)="xclick()"></i>
+      </div>
+      <div>
+        <p>Enter Quantity <i class="fa-solid fa-arrow-down"></i></p>
+      </div>
+      <div class="btn-div">
+        <input type="number" [(ngModel)]="quantity" />
+        <button
+          style="
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: red;
+            color: white;
+          "
+          (click)="itemAdded()"
+        >
+          Add Item
+        </button>
+      </div>
+    </div>
+
+    <div class="about">
+      <h4>
+        <i class="fa-solid fa-copyright"></i>Zomato Item List.All rights
+        reserved !
+      </h4>
+    </div>
+  </body>
+</html>

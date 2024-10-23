@@ -1,0 +1,27 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
+.navbar a{
+    margin-right: 10px;
+    text-decoration: none;
+    color: gray;
+    font-size: 20px;
+    
+}
+
+.navbar a:hover{
+    color:black;
+    text-decoration: underline;
+    
+}
+
+
+
